@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, InputGroup, FormLabel, FormControl, Card} from "react-bootstrap";
+
+import VerticalAlignComponent from "../util/VerticalAlignComponent";
 
 interface LoginComponentProperty{}
 
@@ -7,11 +9,13 @@ const LoginComponent : React.FunctionComponent<LoginComponentProperty> = (proper
     
     return (
         <div className="page component-login">
-            <Container fluid>
-                <Row>
-                    <Col>Example</Col>
-                </Row>
-            </Container>
+            <VerticalAlignComponent horizontalAlign="center" verticalAlign="center">
+                <Card>
+                    <Card.Body>
+                        This is the login card
+                    </Card.Body>
+                </Card>
+            </VerticalAlignComponent>
         </div>
     );
 };
