@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, InputGroup, FormLabel, FormControl, Card, FormGroup, Button, Form, Modal} from "react-bootstrap";
 import VerticalAlignComponent from "../util/VerticalAlignComponent";
+import { LoadingContext } from "../../App";
 
 const { useState } = React;
 
@@ -10,15 +11,14 @@ const LoginComponent: React.FunctionComponent<LoginComponentProperty> = (propert
     let [username, setUsername] = useState();
     let [password, setPassword] = useState();
     let [errorMessage, setErrorMessage] = useState();
-
+    let context = useContext(LoadingContext);
     const onSubmitHandler = (event) => {
         console.log("This is an error");
         console.log(`Username: ${username}`);
         console.log(`Password: ${password}`);
         event.preventDefault();
+        context.handler(true);
     };
-
-
     return (
         <div className="page component-login">
             <Modal show={!!errorMessage} hide={() => {setErrorMessage(undefined)}}>
