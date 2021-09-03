@@ -2,45 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
-import LoginComponent from './component/login/LoginComponent';
+import LoginComponent from './component/page/login/LoginComponent';
+import LoadingComponent from "./component/dialog/loading/LoadingComponent";
+
 import './App.css';
 
 const { useState } = React;
 
-export const LoadingContext = React.createContext({
-  handler: (isLoading: Boolean) => {
-    console.warn("LoadingContext.handler is not handled");
-  }
-});
-
 function App() {
-  let [loading, setLoading] = useState(false);
-  const loadingContextValue = {
-    handler: (isLoading: boolean) => {
-      console.log(`Loading is called isLoading value: ${isLoading}`);
-      setLoading(isLoading);
-    }
-  };
-
-  let modalContainer = undefined;
-  if (loading) {
-    let loadingComponent = undefined;
-    if (loading) {
-      loadingComponent = (
-        <div className="loadingComponent">
-          <div className="lds-ripple"><div></div><div></div></div>
-        </div>
-      );
-    }
-    modalContainer = (<div className="modalContainer">
-      {loadingComponent}
-    </div>);
-  }
-
   return (
-    <LoadingContext.Provider value={loadingContextValue}>
-      {modalContainer}
-      <div className="App">
+    <div className="App">
+      <LoadingComponent>
         <Router>
           <Switch>
             <Route path="/login" component={LoginComponent} />
@@ -49,13 +21,10 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </div>
-    </LoadingContext.Provider>
+      </LoadingComponent>
+    </div>
+
   );
 }
-
-const LoginPage = () => {
-  return (<></>);
-};
 
 export default App;
