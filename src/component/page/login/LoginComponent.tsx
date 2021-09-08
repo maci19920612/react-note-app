@@ -13,10 +13,8 @@ const LoginComponent: React.FunctionComponent<LoginComponentProperty> = (propert
     let {register, handleSubmit} = useForm();
     console.log("Register data: ", register);
     console.log("Handle submit data: ", handleSubmit);
-    let [errorMessage, setErrorMessage] = useState();
     let loadingContext = useContext(LoadingContext);
     const onFormSubmitHandler = (loginFormData) => {
-        console.log("Form was submitted: ", loginFormData);
         loadingContext.showLoading(true);
     };
     return (

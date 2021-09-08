@@ -1,4 +1,4 @@
-export default class AuthManager{
+export class AuthManager{
     async login(username: string, password: string) : Promise<void>{
 
     }
