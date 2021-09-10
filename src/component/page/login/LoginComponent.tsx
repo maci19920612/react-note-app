@@ -4,6 +4,7 @@ import VerticalAlignComponent from "../../util/VerticalAlignComponent";
 import { LoadingContext } from "../../dialog/loading/LoadingContext";
 import { useForm } from "react-hook-form";
 import "./LoginComponent.scss"
+import { DependencyInjectionContext } from "../../../di/ComponentContainer";
 
 const { useState } = React;
 
@@ -14,8 +15,10 @@ const LoginComponent: React.FunctionComponent<LoginComponentProperty> = (propert
     console.log("Register data: ", register);
     console.log("Handle submit data: ", handleSubmit);
     let loadingContext = useContext(LoadingContext);
+    let { authManager } = useContext(DependencyInjectionContext).get()
     const onFormSubmitHandler = (loginFormData) => {
         loadingContext.showLoading(true);
+        authManager.login(loginFormData.username, loginFormData.password)
     };
     return (
         <div className="page component-login">

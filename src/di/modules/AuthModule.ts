@@ -1,12 +1,12 @@
-import {asClass } from "awilix"; 
+import { asClass } from "awilix";
 import { AuthManager } from "../../manager/AuthManager"
 
 export type AuthModuleDefinition = {
     authManager: AuthManager
 };
 
-const module = {
+const m = {
     authManager: asClass(AuthManager)
 };
 
-export default module;
+export default m;
