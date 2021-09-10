@@ -1,6 +1,8 @@
 export class AuthManager{
     async login(username: string, password: string) : Promise<void>{
-        alert("Login " + username + password);
+        if(username != "admin" || password != "admin"){
+            throw new Error("Invalid credentials provided.");
+        }
     }
     async loginAsGuest() : Promise<void>{
 
