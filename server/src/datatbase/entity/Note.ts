@@ -9,8 +9,6 @@ export class Note {
     @Column()
     title: string;
     @Column()
-    excerpt: string;
-    @Column()
     content: string;
     @ManyToOne(() => User)
     user: User;
