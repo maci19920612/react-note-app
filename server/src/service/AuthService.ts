@@ -8,6 +8,7 @@ import { PasswordUtils } from "src/util/PasswordUtils";
 import { v4 as uuid } from "uuid"
 import { textChangeRangeIsUnchanged } from "typescript";
 import e from "express";
+import { retry } from "rxjs";
 export interface Token {
     token: string
 }
@@ -89,7 +90,7 @@ export class AuthService {
         await this.userRepository.save(user);
     }
 
-    async validate(token: string){
+    async validate(token: string): Promise<boolean>{
         let targetUserToken = await this.userTokenRepository.findOne({
             where: {
                 token
@@ -97,11 +98,12 @@ export class AuthService {
         });
 
         if(!targetUserToken){
-            throw new InvalidToken();
+            return false
         }
 
         targetUserToken.lastUsage = new Date().toString();
 
         await this.userTokenRepository.save(targetUserToken);
+        return true
     }
 }
