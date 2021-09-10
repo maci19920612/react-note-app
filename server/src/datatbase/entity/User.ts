@@ -11,5 +11,5 @@ export class User {
     @Column()
     password: string;
     @OneToMany(() => UserToken, (token) => token.user)
-    userTokens: UserToken[]
+    userTokens: UserToken[];
 }
