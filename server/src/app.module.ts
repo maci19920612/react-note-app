@@ -6,6 +6,7 @@ import { User } from './datatbase/entity/User';
 import { UserToken } from './datatbase/entity/UserToken';
 import { Note } from './datatbase/entity/Note';
 import { NoteDirectory } from './datatbase/entity/NoteDirectory';
+import { NoteController } from './controller/note/note.directory.controller';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { NoteDirectory } from './datatbase/entity/NoteDirectory';
       entities: [User, UserToken, Note, NoteDirectory]
     })
   ],
-  controllers: [AppController],
+  controllers: [AppController, NoteController],
   providers: [AppService],
 })
 export class AppModule {}
