@@ -1,3 +1,3 @@
-class NoteManager{
-    
+export class NoteManager {
+
 }
