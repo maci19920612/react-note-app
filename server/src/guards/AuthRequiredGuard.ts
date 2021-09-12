@@ -1,9 +1,9 @@
-import { CanActivate, ExecutionContext, Injectable } from "@nestjs/common";
+import { CanActivate, ExecutionContext, Injectable, Scope } from "@nestjs/common";
 import { Request } from "express";
 import { AuthService } from "src/service/AuthService";
 
 @Injectable()
-export class RolesGuard implements CanActivate{
+export class AuthRequiredGuard implements CanActivate{
     
     constructor(
         private authService: AuthService

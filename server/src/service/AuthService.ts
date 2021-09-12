@@ -3,12 +3,9 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { User } from "../datatbase/entity/User";
 import { UserToken } from "src/datatbase/entity/UserToken";
-import supertest from "supertest";
 import { PasswordUtils } from "src/util/PasswordUtils";
 import { v4 as uuid } from "uuid"
-import { textChangeRangeIsUnchanged } from "typescript";
-import e from "express";
-import { retry } from "rxjs";
+
 export interface Token {
     token: string
 }
@@ -37,16 +34,17 @@ export class EmailAlreadyExists extends Error {
     }
 }
 
-export class InvalidToken extends Error {};
+export class InvalidToken extends Error { };
 
 @Injectable()
 export class AuthService {
     constructor(
-        @InjectRepository(User) private userRepository: Repository<User>,
+        @InjectRepository(User)
+        private userRepository: Repository<User>,
         @InjectRepository(UserToken) private userTokenRepository: Repository<UserToken>,
         private passwordUtils: PasswordUtils
     ) { }
-    
+
     async login(email: string, password: string): Promise<Token> {
         let targetUser = await this.userRepository.findOne({
             where: { email }
@@ -78,7 +76,7 @@ export class AuthService {
             }
         });
 
-        if(targetUser){
+        if (targetUser) {
             throw new EmailAlreadyExists(email);
         }
 
@@ -90,14 +88,14 @@ export class AuthService {
         await this.userRepository.save(user);
     }
 
-    async validate(token: string): Promise<boolean>{
+    async validate(token: string): Promise<boolean> {
         let targetUserToken = await this.userTokenRepository.findOne({
             where: {
                 token
             }
         });
 
-        if(!targetUserToken){
+        if (!targetUserToken) {
             return false
         }
 
