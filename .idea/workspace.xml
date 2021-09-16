@@ -4,20 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="- Fix a build issue&#10;- Implement the DefaulEx">
-      <change afterPath="$PROJECT_DIR$/server/src/controller/auth/dto/CredentialsDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controller/auth/dto/TokenDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" afterDir="false" />
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="- Started">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/47b3c1cb-a3af-4a74-bd6d-e97487a05c73.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/note_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/note_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/manager/NoteManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/manager/NoteManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/_base/dto/ErrorDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/guards/AuthRequiredGuard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/guards/AuthRequiredGuard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/guards/AuthRequiredGuard.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/service/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/AuthService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +50,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -54,8 +60,19 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/server/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.rest-api#1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,10 +86,19 @@
       <workItem from="1631193620304" duration="549000" />
       <workItem from="1631259100172" duration="112000" />
       <workItem from="1631467411149" duration="2919000" />
+      <workItem from="1631555465785" duration="5266000" />
+      <workItem from="1631563501660" duration="555000" />
+      <workItem from="1631564071437" duration="631000" />
+      <workItem from="1631730904621" duration="158000" />
+      <workItem from="1631792857481" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

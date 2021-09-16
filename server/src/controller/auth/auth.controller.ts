@@ -1,10 +1,11 @@
-import {Body, Controller, HttpCode, HttpException, HttpStatus, Post, Req} from "@nestjs/common";
+import {Body, Controller, HttpCode, HttpException, HttpStatus, Post, Req, UseGuards} from "@nestjs/common";
 import {Request} from "express";
 import {CredentialsDTO} from "./dto/CredentialsDTO";
 import {AuthService, InvalidCredentials, UserNotFound} from "../../service/AuthService";
 import {TokenDTO} from "./dto/TokenDTO";
 import {ApiResponse, ApiTags} from "@nestjs/swagger";
 import {ErrorDTO} from "../_base/dto/ErrorDTO";
+import {AuthGuard} from "@nestjs/passport";
 
 @ApiTags("auth")
 @Controller("/auth")
@@ -24,23 +25,25 @@ export class AuthController {
         status: 403,
         description: "Invalid credentials"
     })
+    @UseGuards(AuthGuard("local"))
     @Post("/login")
-    async login(@Body() credentials: CredentialsDTO): Promise<TokenDTO> {
-        let {email, password} = credentials;
-        try {
-            let {token} = await this.authService.login(email, password)
-            console.log(`Newly created token: ${token}`);
-            return <TokenDTO>{
-                token
-            };
-        } catch (ex) {
-            if (ex instanceof UserNotFound) {
-                console.error(`User not found with this email: ${ex.email}`);
-            } else if (ex instanceof InvalidCredentials) {
-                console.error(`Invalid password for this email: ${ex.email}`);
-            }
-            throw new HttpException("Invalid credentials", HttpStatus.FORBIDDEN);
-        }
+    async login(@Body() credentials: CredentialsDTO): Promise<any> {
+        return "something";
+        // let {email, password} = credentials;
+        // try {
+        //     let {token} = await this.authService.login(email, password)
+        //     console.log(`Newly created token: ${token}`);
+        //     return <TokenDTO>{
+        //         token
+        //     };
+        // } catch (ex) {
+        //     if (ex instanceof UserNotFound) {
+        //         console.error(`User not found with this email: ${ex.email}`);
+        //     } else if (ex instanceof InvalidCredentials) {
+        //         console.error(`Invalid password for this email: ${ex.email}`);
+        //     }
+        //     throw new HttpException("Invalid credentials", HttpStatus.FORBIDDEN);
+        // }
     }
 
     @ApiResponse({
@@ -61,6 +64,11 @@ export class AuthController {
         } catch (ex) {
             throw new HttpException("This email address already taken", 409);
         }
+    }
+
+    @Post("/logout")
+    async logout(){
+        
     }
 
 }

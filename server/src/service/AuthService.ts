@@ -112,4 +112,21 @@ export class AuthService {
         await this.userTokenRepository.save(targetUserToken);
         return true
     }
+
+
+    //region Passport related implementation
+    async validateUser(email: string, password: string): Promise<User | null> {
+        let hashedPassword = this.passwordUtils.hash(password);
+        let targetUser = await this.userRepository.findOne({
+            where: {
+                email
+            }
+        });
+        if (!targetUser || targetUser.password !== password && targetUser.password !== hashedPassword) {
+            return null;
+        }
+        return targetUser;
+    }
+
+    //endregion
 }

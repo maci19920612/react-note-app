@@ -1,7 +1,6 @@
 import {ArgumentsHost, ExceptionFilter, HttpException} from "@nestjs/common";
 import {Response} from "express";
 import {ErrorDTO} from "../controller/_base/dto/ErrorDTO";
-import {parse} from "stack-trace";
 
 export class DefaultExceptionFilter implements ExceptionFilter {
     catch(exception: any, host: ArgumentsHost): any {
@@ -13,9 +12,9 @@ export class DefaultExceptionFilter implements ExceptionFilter {
             status = exception.getStatus();
         }
         let stacktrace = undefined;
-        if (true /*isDebug*/) {
-            stacktrace = parse(exception);
-        }
+        // if (true /*isDebug*/) {
+        //     stacktrace = parse(exception);
+        // }
         response
             .status(status)
             .json(<ErrorDTO>{
