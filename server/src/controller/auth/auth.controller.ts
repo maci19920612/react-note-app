@@ -1,19 +1,19 @@
-import {Body, Controller, HttpCode, HttpException, HttpStatus, Post, Req, UseGuards} from "@nestjs/common";
+import {BadRequestException, Body, Controller, HttpCode, HttpException, Post, Req, UseGuards} from "@nestjs/common";
 import {Request} from "express";
 import {CredentialsDTO} from "./dto/CredentialsDTO";
-import {AuthService, InvalidCredentials, UserNotFound} from "../../service/AuthService";
-import {TokenDTO} from "./dto/TokenDTO";
+import {AuthService, RefreshToken} from "../../service/AuthService";
+import {AccessTokenDTO, RefreshTokenDTO, TokenDTO} from "./dto/TokenDTO";
 import {ApiResponse, ApiTags} from "@nestjs/swagger";
 import {ErrorDTO} from "../_base/dto/ErrorDTO";
 import {AuthGuard} from "@nestjs/passport";
+import {User} from "../../datatbase/entity/User";
 
 @ApiTags("auth")
 @Controller("/auth")
 export class AuthController {
     constructor(
         private authService: AuthService
-    ) {
-    }
+    ) {}
 
     @ApiResponse({
         type: TokenDTO,
@@ -27,24 +27,23 @@ export class AuthController {
     })
     @UseGuards(AuthGuard("local"))
     @Post("/login")
-    async login(@Body() credentials: CredentialsDTO): Promise<any> {
-        return "something";
-        // let {email, password} = credentials;
-        // try {
-        //     let {token} = await this.authService.login(email, password)
-        //     console.log(`Newly created token: ${token}`);
-        //     return <TokenDTO>{
-        //         token
-        //     };
-        // } catch (ex) {
-        //     if (ex instanceof UserNotFound) {
-        //         console.error(`User not found with this email: ${ex.email}`);
-        //     } else if (ex instanceof InvalidCredentials) {
-        //         console.error(`Invalid password for this email: ${ex.email}`);
-        //     }
-        //     throw new HttpException("Invalid credentials", HttpStatus.FORBIDDEN);
-        // }
+    async login(@Req() request: Request & { user: User }): Promise<TokenDTO> {
+        return await this.authService.login(request.user);
     }
+
+    @ApiResponse({
+        type: AccessTokenDTO,
+        status: 200,
+        description: "Returns with a fresh access token"
+    })
+    @Post("/token-refresh")
+    async tokenRefresh(@Body() refreshTokenDTO: RefreshTokenDTO): Promise<AccessTokenDTO> {
+        let accessToken = await this.authService.refreshToken(refreshTokenDTO.refreshToken)
+        return {
+            accessToken
+        };
+    }
+
 
     @ApiResponse({
         status: 204,
@@ -66,9 +65,14 @@ export class AuthController {
         }
     }
 
+
     @Post("/logout")
-    async logout(){
-        
+    async logout(@Req() request: Request) {
+        let accessToken = request.headers["authorization"];
+        if(!accessToken){
+            throw new BadRequestException();
+        }
+        await this.authService.logout(accessToken);
     }
 
 }

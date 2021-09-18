@@ -1,0 +1,13 @@
+{
+  "secret": "--password-salt--",
+  "jwt": {
+    "accessToken": {
+      "secret": "--access-token-secret--",
+      "expiration": "--access-token-expiration-- ex: 15m"
+    },
+    "refreshToken": {
+      "secret": "--refresh-token-secret--",
+      "expiration": "--refresh-token-expiration--"
+    }
+  }
+}

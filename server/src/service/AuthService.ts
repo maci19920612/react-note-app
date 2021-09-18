@@ -5,9 +5,15 @@ import {User} from "../datatbase/entity/User";
 import {UserToken} from "src/datatbase/entity/UserToken";
 import {PasswordUtils} from "src/util/PasswordUtils";
 import {v4 as uuid} from "uuid"
+import jwt from "jsonwebtoken";
+import {JwtService} from "./JwtService";
 
-export interface Token {
-    token: string
+export interface AccessToken {
+    accessToken: string;
+}
+
+export interface RefreshToken extends AccessToken {
+    refreshToken: string;
 }
 
 export class UserNotFound extends Error {
@@ -42,41 +48,40 @@ export class AuthService {
     constructor(
         @InjectRepository(User) private userRepository: Repository<User>,
         @InjectRepository(UserToken) private userTokenRepository: Repository<UserToken>,
-        private passwordUtils: PasswordUtils
+        private passwordUtils: PasswordUtils,
+        private jwtService: JwtService
     ) {
     }
 
     /**
-     * @param email
-     * @param password
+     * @param user: The users which is authenticated by the local passport strategy
      * @return Newly created token for the references user, it only returns with this when the login was successful.
      * @throws UserNotFound this is thrown when the email is not found in our database
      * @throws InvalidCredentials this is thrown when the password is invalid
      */
-    async login(email: string, password: string): Promise<Token> {
-        let targetUser = await this.userRepository.findOne({
-            where: {email}
-        });
-
-        if (!targetUser) {
-            throw new UserNotFound(email);
-        }
-
-        if (this.passwordUtils.hash(password) != targetUser.password) {
-            throw new InvalidCredentials(email);
-        }
-        let token = uuid()
-        console.log("Generaeted token: ", token);
+    async login(user: User): Promise<RefreshToken> {
+        let refreshToken = this.jwtService.signRefreshToken(user);
+        let accessToken = this.jwtService.signAccessToken(user);
         let userToken = this.userTokenRepository.create({
-            user: targetUser,
-            token,
+            user: user,
+            refreshToken,
+            accessToken,
             createdAt: new Date().toString(),
             lastUsage: new Date().toString()
         });
         await this.userTokenRepository.save(userToken);
-        return <Token>{token};
+        return {
+            refreshToken,
+            accessToken
+        };
     }
 
+    /**
+     * This function will create, validate and save a new user into the database
+     * @param email The new user's email address
+     * @param password The hew user's password
+     * @returns void
+     */
     async register(email: string, password: string) {
         let targetUser = await this.userRepository.findOne({
             where: {
@@ -96,10 +101,11 @@ export class AuthService {
         await this.userRepository.save(user);
     }
 
-    async validate(token: string): Promise<boolean> {
+
+    async validateAccessToken(token: string): Promise<boolean> {
         let targetUserToken = await this.userTokenRepository.findOne({
             where: {
-                token
+                accessToken: token
             }
         });
 
@@ -114,7 +120,12 @@ export class AuthService {
     }
 
 
-    //region Passport related implementation
+    /**
+     * This function is used by the LocalPassportStrategy and it's used it to create a user object if it exists and the provided passport is correct
+     * @param email Target user's email address
+     * @param password Target user's password
+     * @returns User if it exists and the password is valid or null of either of those statements is false
+     */
     async validateUser(email: string, password: string): Promise<User | null> {
         let hashedPassword = this.passwordUtils.hash(password);
         let targetUser = await this.userRepository.findOne({
@@ -128,5 +139,52 @@ export class AuthService {
         return targetUser;
     }
 
-    //endregion
+    async getUserById(id: number): Promise<User | undefined> {
+        return this.userRepository.findOne({
+            where: {
+                id
+            }
+        });
+    }
+
+    async refreshToken(refreshToken: string): Promise<string> {
+        try {
+            this.jwtService.validateRefreshToken(refreshToken)
+        } catch (ex) {
+            console.error("Invalid refresh token provided");
+            throw new Error("Invalid or expired refresh token provided!");
+        }
+        let userToken = await this.userTokenRepository.findOne({
+            where: {
+                refreshToken
+            },
+            relations: ["user"]
+        });
+
+        if (!userToken) {
+            console.error(`Revoked refresh token: ${refreshToken}`);
+            throw new Error("This refreshToken was revoked");
+        }
+        let targetUser = userToken.user;
+        let newAccessToken = this.jwtService.signAccessToken(targetUser);
+        userToken.accessToken = newAccessToken;
+        await this.userTokenRepository.save(userToken);
+        return newAccessToken;
+    }
+
+    async logout(accessToken: string) {
+        let targetUserToken = await this.userTokenRepository.findOne({
+            where: {
+                accessToken
+            }
+        });
+
+        if(!targetUserToken){
+            return;
+        }
+
+        await this.userTokenRepository.remove(targetUserToken);
+    }
 }
+
+

@@ -4,25 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="- Started">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/47b3c1cb-a3af-4a74-bd6d-e97487a05c73.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/note_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/note_app.iml" afterDir="false" />
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/config.json.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/Config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/guards/JwtPassportStrategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/service/JwtService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/guards/AuthRequiredGuard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/auth/dto/TokenDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/dto/TokenDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/UserToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/UserToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/service/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/AuthService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -63,6 +60,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/server/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
@@ -90,7 +92,9 @@
       <workItem from="1631563501660" duration="555000" />
       <workItem from="1631564071437" duration="631000" />
       <workItem from="1631730904621" duration="158000" />
-      <workItem from="1631792857481" duration="153000" />
+      <workItem from="1631792857481" duration="5746000" />
+      <workItem from="1631904609259" duration="4323000" />
+      <workItem from="1631972669029" duration="4820000" />
     </task>
     <servers />
   </component>

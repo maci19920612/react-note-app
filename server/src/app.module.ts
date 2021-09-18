@@ -9,6 +9,10 @@ import {AuthController} from "./controller/auth/auth.controller";
 import {AuthService} from "./service/AuthService";
 import {PasswordUtils} from "./util/PasswordUtils";
 import {LocalPassportStrategy} from "./guards/LocalPassportStrategy";
+import {Config} from "./Config";
+import {JwtService} from "./service/JwtService";
+import * as fs from "fs";
+import {JwtPassportStrategy} from "./guards/JwtPassportStrategy";
 
 @Module({
     imports: [
@@ -21,7 +25,17 @@ import {LocalPassportStrategy} from "./guards/LocalPassportStrategy";
         TypeOrmModule.forFeature([User, UserToken, Note, NoteDirectory]),
     ],
     controllers: [NoteController, AuthController],
-    providers: [AuthService, PasswordUtils, LocalPassportStrategy],
+    providers: [
+        AuthService,
+        PasswordUtils,
+        LocalPassportStrategy,
+        JwtPassportStrategy,
+        {
+            provide: Config,
+            useValue: JSON.parse(fs.readFileSync("./config.json").toString("utf8"))
+        },
+        JwtService
+    ],
 })
 export class AppModule {
 }

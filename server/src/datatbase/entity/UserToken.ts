@@ -8,7 +8,9 @@ export class UserToken {
     @ManyToOne(() => User)
     user: User;
     @Column()
-    token: string;
+    accessToken: string;
+    @Column()
+    refreshToken: string;
     @Column()
     createdAt: string;
     @Column()

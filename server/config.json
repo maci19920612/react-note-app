@@ -1,0 +1,13 @@
+{
+  "secret": "VbRqha3bTKVDY7pZDhQZTAC5a44F3jVhDBM6J9veSAs",
+  "jwt": {
+    "accessToken": {
+      "secret": "Rq8JEtRMT9RzGYmr9zeuaZDkQjYpaN3Gax8T6cgrPaU",
+      "expiration": "15m"
+    },
+    "refreshToken": {
+      "secret": "N8yZpWjfum5ajHr2K5rftFVrCm96msGP5DrFMGz5yaZ",
+      "expiration": "30d"
+    }
+  }
+}
