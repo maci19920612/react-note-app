@@ -40,7 +40,7 @@ export class NoteService {
                 } : null)
             },
             relations: ["user", "parentDirectory"]
-        });;
+        });
     }
 
     async getNoteById(user: User, id: number): Promise<Note | undefined> {
@@ -65,7 +65,7 @@ export class NoteService {
         return await this.noteRepository.save(note); //TODO: We should test that it will return the original note or it will query down from the database. It's important becuase in this point we don't have id for this newly created note.
     }
 
-    async editNote(user: User, id: number, title: string, content: string): Promise<Note> {
+    async updateNote(user: User, id: number, title: string, content: string): Promise<Note> {
         let targetNote = await this.noteRepository.findOne({
             where: {
                 id,

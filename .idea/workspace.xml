@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/config.json.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/Config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/guards/JwtPassportStrategy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/service/JwtService.ts" afterDir="false" />
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="Implement the authentication based functions on the server side">
+      <change afterPath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/guards/model/AuthenticatedRequest.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/auth/dto/TokenDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/dto/TokenDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/note/dto/NoteItemDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/dto/NoteItemDTO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/UserToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/UserToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/guards/LocalPassportStrategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/service/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/AuthService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +29,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/server/node_modules/@types/node/path.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1xaJSh9Nol0fdnv8WU7bZl5hdOA" />
   <component name="ProjectLevelVcsManager">
@@ -57,8 +52,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/server/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -94,12 +89,25 @@
       <workItem from="1631730904621" duration="158000" />
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
-      <workItem from="1631972669029" duration="4820000" />
+      <workItem from="1631972669029" duration="9999000" />
+      <workItem from="1632047768533" duration="489000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
+      <created>1631977654130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631977654130</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement the authentication based functions on the server side" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the authentication based functions on the server side" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
