@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="Added connec">
-      <change afterPath="$PROJECT_DIR$/server/connection.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/fixtures/User.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/DatabaseConfig.ts" afterDir="false" />
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +88,7 @@
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
-      <workItem from="1632047768533" duration="3775000" />
+      <workItem from="1632047768533" duration="3905000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>
@@ -118,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632048656187</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added fixtures support, fixed the missing auth guard from the NoteDirectoryController and some smaller bugs with the same class and fixed the missing logging from the exception handler">
+      <created>1632051593974</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632051593974</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +128,8 @@
     <MESSAGE value="Implement the authentication based functions on the server side" />
     <MESSAGE value="Implemented the Note and NoteDirectory related endpoints" />
     <MESSAGE value="ADded /api prefix for the REST API related controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADded /api prefix for the REST API related controllers" />
+    <MESSAGE value="Added fixtures support, fixed the missing auth guard from the NoteDirectoryController and some smaller bugs with the same class and fixed the missing logging from the exception handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fixtures support, fixed the missing auth guard from the NoteDirectoryController and some smaller bugs with the same class and fixed the missing logging from the exception handler" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
