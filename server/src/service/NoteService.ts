@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { ignoreElements } from "rxjs";
 import { Note } from "src/datatbase/entity/Note";
 import { NoteDirectory } from "src/datatbase/entity/NoteDirectory";
 import { User } from "src/datatbase/entity/User";
@@ -10,7 +9,7 @@ export class NoteNotFoundWithId extends Error {
     constructor(
         public id: number
     ) {
-        super();
+        super(`Note not found with this id: ${id}`);
     }
 }
 
