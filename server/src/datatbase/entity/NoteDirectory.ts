@@ -7,13 +7,13 @@ export class NoteDirectory {
     id: number;
     @Column()
     name: string;
-    @ManyToOne(() => NoteDirectory)
+    @ManyToOne(() => NoteDirectory, {
+        onDelete: "CASCADE"
+    })
     parentDirectory: NoteDirectory;
     @ManyToOne(() => User)
     user: User;
     
-    @OneToMany(() => NoteDirectory, (note) => note.parentDirectory, {
-        cascade: true
-    })
+    @OneToMany(() => NoteDirectory, (note) => note.parentDirectory)
     childDirectories: NoteDirectory[];
 }

@@ -13,7 +13,7 @@ export class Note {
     @ManyToOne(() => User)
     user: User;
     @ManyToOne(() => NoteDirectory, {
-        cascade: true
+        onDelete: "CASCADE"
     })
     parentDirectory: NoteDirectory;
 }

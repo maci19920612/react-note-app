@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
-      <workItem from="1632047768533" duration="3905000" />
+      <workItem from="1632047768533" duration="4407000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>

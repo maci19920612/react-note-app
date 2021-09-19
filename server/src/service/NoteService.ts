@@ -163,32 +163,10 @@ export class NoteService {
             id
         });
 
-        if (!targetNoteDirectory) {
-            throw new NoteDirectoryNotFound(id);
+        if(!targetNoteDirectory){
+            return;
         }
 
-        let idCollector = (directory: NoteDirectory): number[] => {
-            return [
-                directory.id,
-                ...directory.childDirectories?.flatMap(childDirectory => idCollector(childDirectory))
-            ];
-        }
-
-        let ids = idCollector(targetNoteDirectory);
-        let notes = await this.noteRepository.find({
-            where: {
-                parentDirectory: {
-                    id: In(ids)
-                },
-                user: {
-                    id: user.id
-                }
-            },
-            relations: ["user", "parentDirectory"]
-        });
-        this.noteRepository.remove(notes);
-        this.noteRepository.delete({
-            id: In(ids)
-        });
+        await this.noteDirectoryRepository.remove(targetNoteDirectory);
     }
 }
