@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/fixtures/Note.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/fixtures/NoteDirectoy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/fixtures/User.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/fixtures/User.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/fixtures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,16 +55,36 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/fixtures" />
       <recent name="$PROJECT_DIR$/server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.fixtures">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="Fixtures" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="fixtures" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="fixtures" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.rest-api#1" />
+      <item itemvalue="Node.js.Fixtures" />
+      <item itemvalue="npm.fixtures" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.rest-api#1" />
@@ -89,7 +110,7 @@
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
-      <workItem from="1632047768533" duration="4407000" />
+      <workItem from="1632047768533" duration="7648000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>
@@ -119,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632051593974</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed the foreign key error if the user deleted a non empty directory">
+      <created>1632052275319</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632052275319</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +158,8 @@
     <MESSAGE value="Implemented the Note and NoteDirectory related endpoints" />
     <MESSAGE value="ADded /api prefix for the REST API related controllers" />
     <MESSAGE value="Added fixtures support, fixed the missing auth guard from the NoteDirectoryController and some smaller bugs with the same class and fixed the missing logging from the exception handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fixtures support, fixed the missing auth guard from the NoteDirectoryController and some smaller bugs with the same class and fixed the missing logging from the exception handler" />
+    <MESSAGE value="Fixed the foreign key error if the user deleted a non empty directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the foreign key error if the user deleted a non empty directory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -4,3 +4,7 @@ items:
     id: 1
     email: "admin"
     password: "admin"
+  user1:
+    id: 2
+    email: "admin2"
+    password: "admin2"

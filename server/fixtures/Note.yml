@@ -1,0 +1,15 @@
+entity: Note
+items:
+  note0:
+    title: "Admin0 root note"
+    content: '{{lorem.text}}'
+    user: "@user0"
+  note1:
+    title: "Admin1 root note"
+    content: "{{lorem.text}}"
+    user: "@user1"
+  note2:
+    title: "Admin1 non root note"
+    content: "{{lorem.text}}"
+    user: "@user0"
+    parentDirectory: "@user0_dir0"

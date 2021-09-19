@@ -1,0 +1,12 @@
+entity: NoteDirectory
+items:
+  user0_dir0:
+    name: "Admin root directory"
+    user: '@user0'
+  user0_dir1:
+    name: "Admin sub directory"
+    parentDirectory: "@user0_dir0"
+    user: "@user0"
+  user1_dir0:
+    name: "Admin2 root directory"
+    user: "@user1"
