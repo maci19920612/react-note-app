@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="Implement the authentication based functions on the server side">
-      <change afterPath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/guards/model/AuthenticatedRequest.ts" afterDir="false" />
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/note/dto/NoteItemDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/dto/NoteItemDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +86,7 @@
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
-      <workItem from="1632047768533" duration="489000" />
+      <workItem from="1632047768533" duration="866000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631977654130</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented the Note and NoteDirectory related endpoints">
+      <created>1632048496804</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632048496804</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +110,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement the authentication based functions on the server side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the authentication based functions on the server side" />
+    <MESSAGE value="Implemented the Note and NoteDirectory related endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented the Note and NoteDirectory related endpoints" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

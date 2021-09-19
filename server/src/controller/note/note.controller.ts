@@ -9,7 +9,7 @@ import {ApiTags} from "@nestjs/swagger";
 
 @ApiTags("Note")
 @UseGuards(AuthGuard("jwt"))
-@Controller("note")
+@Controller("api/note")
 export class NoteController {
     constructor(
         private noteService: NoteService

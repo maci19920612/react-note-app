@@ -5,7 +5,7 @@ import {NoteItemDTO} from "./dto/NoteItemDTO";
 import {ApiTags} from "@nestjs/swagger";
 
 @ApiTags("note directory")
-@Controller("note-directory")
+@Controller("api/note-directory")
 export class NoteDirectoryController{
     constructor(
         private noteService: NoteService

@@ -9,7 +9,7 @@ import {AuthGuard} from "@nestjs/passport";
 import {User} from "../../datatbase/entity/User";
 
 @ApiTags("auth")
-@Controller("/auth")
+@Controller("api/auth")
 export class AuthController {
     constructor(
         private authService: AuthService
