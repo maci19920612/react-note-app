@@ -15,15 +15,11 @@ import * as fs from "fs";
 import {JwtPassportStrategy} from "./guards/JwtPassportStrategy";
 import {NoteService} from "./service/NoteService";
 import {NoteDirectoryController} from "./controller/note/note.directory.controller";
+import {DatabaseConfig} from "./DatabaseConfig";
 
 @Module({
     imports: [
-        TypeOrmModule.forRoot({
-            type: "sqlite",
-            database: "database.sqlite",
-            synchronize: true,
-            autoLoadEntities: true
-        }),
+        TypeOrmModule.forRoot(DatabaseConfig),
         TypeOrmModule.forFeature([User, UserToken, Note, NoteDirectory]),
     ],
     controllers: [NoteController, NoteDirectoryController, AuthController],

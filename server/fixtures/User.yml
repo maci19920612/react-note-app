@@ -1,0 +1,6 @@
+entity: User
+items:
+  user0:
+    id: 1
+    email: "admin"
+    password: "admin"

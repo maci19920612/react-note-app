@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
+    <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="Added connec">
+      <change afterPath="$PROJECT_DIR$/server/connection.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/fixtures/User.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/DatabaseConfig.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/note/note.directory.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/Note.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/datatbase/entity/NoteDirectory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/exception/DefaultExceptionFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +62,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
@@ -86,7 +95,7 @@
       <workItem from="1631792857481" duration="5746000" />
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
-      <workItem from="1632047768533" duration="866000" />
+      <workItem from="1632047768533" duration="3775000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>
@@ -102,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632048496804</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ADded /api prefix for the REST API related controllers">
+      <created>1632048656187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632048656187</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +127,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement the authentication based functions on the server side" />
     <MESSAGE value="Implemented the Note and NoteDirectory related endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the Note and NoteDirectory related endpoints" />
+    <MESSAGE value="ADded /api prefix for the REST API related controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADded /api prefix for the REST API related controllers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

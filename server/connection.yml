@@ -1,0 +1,9 @@
+- name: default
+  type: sqlite
+  database: database.sqlite
+  synchronize: false
+  logging: false
+  entities:
+    - ./dist/datatbase/entity/*.js
+  cli:
+    entitiesDir: entity

@@ -15,6 +15,7 @@ export class DefaultExceptionFilter implements ExceptionFilter {
         // if (true /*isDebug*/) {
         //     stacktrace = parse(exception);
         // }
+        console.error(exception);
         response
             .status(status)
             .json(<ErrorDTO>{

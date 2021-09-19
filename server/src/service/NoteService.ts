@@ -151,6 +151,7 @@ export class NoteService {
         if (!targetNoteDirectory) {
             throw new NoteDirectoryNotFound(id);
         }
+        targetNoteDirectory.name = name;
         return this.noteDirectoryRepository.save(targetNoteDirectory);
     }
 
@@ -172,6 +173,7 @@ export class NoteService {
                 ...directory.childDirectories?.flatMap(childDirectory => idCollector(childDirectory))
             ];
         }
+
         let ids = idCollector(targetNoteDirectory);
         let notes = await this.noteRepository.find({
             where: {

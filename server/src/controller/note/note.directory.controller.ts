@@ -1,10 +1,13 @@
-import {Body, Controller, Delete, Get, HttpCode, Injectable, Param, Post, Put, Req} from "@nestjs/common";
+import {Body, Controller, Delete, Get, HttpCode, Injectable, Param, Post, Put, Req, UseGuards} from "@nestjs/common";
 import {AuthenticatedRequest} from "../../guards/model/AuthenticatedRequest";
 import {NoteService} from "../../service/NoteService";
 import {NoteItemDTO} from "./dto/NoteItemDTO";
 import {ApiTags} from "@nestjs/swagger";
+import {AuthGuard} from "@nestjs/passport";
+
 
 @ApiTags("note directory")
+@UseGuards(AuthGuard("jwt"))
 @Controller("api/note-directory")
 export class NoteDirectoryController{
     constructor(
@@ -15,7 +18,9 @@ export class NoteDirectoryController{
     async create(@Req() request: AuthenticatedRequest, @Param("parentDirectoryId") parentDirectoryId: number, @Body() noteItem: NoteItemDTO){
         let {title} = noteItem;
         let {user} = request;
+        console.log("note.directory function called");
         let parentDirectory = await this.noteService.getDirectoryById(user, parentDirectoryId);
+        console.log("ParentDirectory: ", parentDirectory);
         let createdDirectory = await this.noteService.createDirectory(user, title, parentDirectory);
         return {
             id: createdDirectory.id,

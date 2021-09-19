@@ -12,6 +12,8 @@ export class Note {
     content: string;
     @ManyToOne(() => User)
     user: User;
-    @ManyToOne(() => NoteDirectory)
+    @ManyToOne(() => NoteDirectory, {
+        cascade: true
+    })
     parentDirectory: NoteDirectory;
 }
