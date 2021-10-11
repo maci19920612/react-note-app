@@ -28,6 +28,14 @@ export class LocalStorage implements IStorage {
         }
     }
 
+    async remove(key: string): Promise<void> {
+        localStorage.removeItem(key);
+    }
+
+    async clear(): Promise<void> {
+        localStorage.clear();
+    }
+
     isSupported(): boolean {
         return !!localStorage;
     }

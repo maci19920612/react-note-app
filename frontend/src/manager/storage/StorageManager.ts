@@ -16,7 +16,16 @@ export class StorageManager {
         }
         await this.storage.set(key, value, expiration);
     }
+    
     async get(key: string): Promise<string | undefined> {
-        return this.storage.get(key);
+        return await this.storage.get(key);
+    }
+    
+    async remove(key: string) : Promise<void>{
+        await this.storage.remove(key);
+    }
+
+    async clear() : Promise<void>{
+        await this.storage.clear();
     }
 }

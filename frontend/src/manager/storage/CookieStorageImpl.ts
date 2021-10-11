@@ -10,6 +10,14 @@ export class CookieStorage implements IStorage {
         return this.getCookie(key);
     }
 
+    async remove(key: string): Promise<void> {
+        this.setCookie(key, "", (new Date(Date.now() - 1000)).toUTCString());
+    }
+
+    async clear(): Promise<void> {
+        document.cookie = "";
+    }
+
     private setCookie(cname, cvalue, expiration: string) {
         let expires = "expires=" + expiration;
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
