@@ -14,7 +14,8 @@ export class StorageModule implements IModule {
     register(container: AwilixContainer<any>) {
         let components = {
             localStorageImpl: asClass(LocalStorageImpl),
-            cookieStorageImpl: asClass(CookieStorageImpl)
+            cookieStorageImpl: asClass(CookieStorageImpl),
+            storageManager: asClass(StorageManager),
         }
         if (this.getPlatform() == this.PLATFORM_WEB) {
             components["storages"] = asFunction(function (localStorageImpl, cookieStorageImpl) {
@@ -25,7 +26,7 @@ export class StorageModule implements IModule {
         }
         container.register(components);
     }
-    
+
     private getPlatform(): string {
         return this.PLATFORM_WEB;
     }
