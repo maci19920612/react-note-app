@@ -1,6 +1,10 @@
-import awilix from "awilix";
-import { asClass } from "awilix";
+import { AwilixContainer } from "awilix";
+import { IModule } from "./base/IModule";
 
-export type AppModule = {
-    
+export type AppModuleType = {};
+
+export class AppModule implements IModule {
+    register(container: AwilixContainer<any>) {
+        //Empty implemnentation
+    }
 }

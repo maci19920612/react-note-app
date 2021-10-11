@@ -1,12 +1,15 @@
-import { asClass } from "awilix";
+import { asClass, AwilixContainer } from "awilix";
 import { AuthManager } from "../../manager/AuthManager"
+import { IModule } from "./base/IModule"
 
-export type AuthModuleDefinition = {
+export type AuthModuleType = {
     authManager: AuthManager
 };
 
-const m = {
-    authManager: asClass(AuthManager)
-};
-
-export default m;
+export class AuthModule implements IModule{
+    register(container: AwilixContainer<any>) {
+        container.register({
+            authManager: asClass(AuthManager)
+        });
+    }
+}
