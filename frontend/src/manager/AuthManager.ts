@@ -10,7 +10,7 @@ export class AuthManager {
         if (username != "admin" || password != "admin") {
             throw new Error("Invalid credentials provided.");
         }
-        this.storageManager.set(KEY_TOKEN, "debug-token");
+        await this.storageManager.set(KEY_TOKEN, "debug-token");
     }
 
     async register(username: string, password: string): Promise<void> {
@@ -18,7 +18,11 @@ export class AuthManager {
     }
 
     async logout() {
-        this.storageManager.set(KEY_TOKEN, "")
-        //TODO: Logout
+        await this.storageManager.remove(KEY_TOKEN);
     }
+
+    async isLoggedIn() : Promise<boolean>{
+        return !!this.storageManager.get(KEY_TOKEN);
+    }
+
 }
