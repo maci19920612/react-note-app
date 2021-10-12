@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { DependencyInjectionContext } from "../../di/ComponentContainer";
 import { Redirect } from "react-router-dom";
+import { randomInt } from "crypto";
 
 type AuthRequiredComponentProps = React.PropsWithChildren<{
     authRequired: boolean
@@ -22,7 +23,7 @@ const AuthGuardComponent: React.FunctionComponent<AuthRequiredComponentProps> = 
             console.log("AuthGuard inner component is running");
             let isLoggedIn = await authManager.isLoggedIn();
             console.log(`AuthGuard, isLoggedIn: ${isLoggedIn}, authRequired: ${props.authRequired}`);
-            if (isLoggedIn !== props.authRequired) {
+            if (isLoggedIn != props.authRequired) {
                 setState(STATE_REDIRECT);
             } else {
                 setState(STATE_RENDER)
@@ -34,7 +35,7 @@ const AuthGuardComponent: React.FunctionComponent<AuthRequiredComponentProps> = 
     if (state == STATE_LOADING) {
         return (<>AuthGuard is running...</>);
     } else if (state == STATE_REDIRECT) {
-        return (<Redirect to="/login" />);
+        return (<><Redirect to="/login" /></>);
     } else if (state == STATE_RENDER) {
         return (<>{props.children}</>);
     } else {

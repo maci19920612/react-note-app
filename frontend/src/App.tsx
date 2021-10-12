@@ -20,12 +20,12 @@ function App() {
           <AlertDialogComponent>
             <Router>
               <Switch>
-                <Route path="/login" component={LoginComponent}>
+                <Route exact path="/login">
                   <AuthGuardComponent authRequired={false}>
                     <LoginComponent />
                   </AuthGuardComponent>
                 </Route>
-                <Route path="/">
+                <Route exact  path="/">
                   <AuthGuardComponent authRequired={true}>
                     This is the main page, you can navigate with these link to login page: <Link to="/login">Login</Link>
                   </AuthGuardComponent>
