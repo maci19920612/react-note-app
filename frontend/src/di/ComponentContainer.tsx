@@ -9,11 +9,13 @@ export type AppComponent = AuthModuleType & AppModuleType & StorageModuleType;
 export class ComponentContainerImpl {
     private container: awilix.AwilixContainer<AppComponent>
     constructor() {
-        this.container = awilix.createContainer();
+        this.container = awilix.createContainer({
+            injectionMode: awilix.InjectionMode.CLASSIC
+        });
         let modules = [
-            new AppModule(),
+            //new AppModule(),
+            new StorageModule(),
             new AuthModule(),
-            new StorageModule()
         ];
         modules.forEach(module => module.register(this.container));
     }

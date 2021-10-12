@@ -3,9 +3,10 @@ import { StorageManager } from "./storage/StorageManager";
 const KEY_TOKEN = "token"
 
 export class AuthManager {
-    constructor(
+    public constructor(
         private storageManager: StorageManager
-    ) { }
+    ) {
+    }
     async login(username: string, password: string): Promise<void> {
         if (username != "admin" || password != "admin") {
             throw new Error("Invalid credentials provided.");
@@ -22,7 +23,7 @@ export class AuthManager {
     }
 
     async isLoggedIn() : Promise<boolean>{
-        return !!this.storageManager.get(KEY_TOKEN);
+        return !!await this.storageManager.get(KEY_TOKEN);
     }
 
 }

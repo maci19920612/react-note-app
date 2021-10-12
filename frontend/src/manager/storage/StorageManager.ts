@@ -1,9 +1,12 @@
-import { CookieStorage } from "./CookieStorageImpl";
+import { CookieStorage } from "./CookieStorage";
 import { IStorage } from "./IStorage";
-import { LocalStorage } from "./LocalStorageImplt";
+import { LocalStorage } from "./LocalStorage";
 export class StorageManager {
     private storage: IStorage
-    constructor(storages: Array<IStorage>) {
+    constructor(
+        storages: Array<IStorage>
+    ) {
+        console.log("StorageManager constructor");
         this.storage = storages.find(storage => storage.isSupported());
         if (!this.storage) {
             throw new Error(`No supported storage implementation is found`);

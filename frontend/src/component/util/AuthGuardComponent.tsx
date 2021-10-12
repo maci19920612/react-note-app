@@ -8,7 +8,7 @@ type AuthRequiredComponentProps = React.PropsWithChildren<{
 
 const STATE_LOADING = 0;
 const STATE_REDIRECT = 1;
-const STATE_RENDER = 3;
+const STATE_RENDER = 2;
 
 const AuthGuardComponent: React.FunctionComponent<AuthRequiredComponentProps> = (props: AuthRequiredComponentProps) => {
     //AuthManager
@@ -21,14 +21,16 @@ const AuthGuardComponent: React.FunctionComponent<AuthRequiredComponentProps> = 
         (async () => {
             console.log("AuthGuard inner component is running");
             let isLoggedIn = await authManager.isLoggedIn();
-            if (isLoggedIn != props.authRequired) {
+            console.log(`AuthGuard, isLoggedIn: ${isLoggedIn}, authRequired: ${props.authRequired}`);
+            if (isLoggedIn !== props.authRequired) {
                 setState(STATE_REDIRECT);
             } else {
                 setState(STATE_RENDER)
             }
         })();
     }, []);
-    
+
+    console.log("State: ", state);
     if (state == STATE_LOADING) {
         return (<>AuthGuard is running...</>);
     } else if (state == STATE_REDIRECT) {

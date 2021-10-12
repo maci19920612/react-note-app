@@ -12,13 +12,16 @@ export class LocalStorage implements IStorage {
         try {
             let targetItem = localStorage.getItem(key);
             if (!targetItem) {
-                throw new Error(`Target item not found in local storage, key: ${key}`);
+                console.log(`Target item not found in local storage, key: ${key}`); 
+                return undefined;
+                
             }
             let entry = JSON.parse(targetItem);
             let expiration = new Date(entry.expiration);
             let currentDate = new Date();
             if (expiration >= currentDate) {
-                throw new Error(`This entry is already expired: ${expiration}, key: ${key}`);
+                console.log(`This entry is already expired: ${expiration}, key: ${key}`);
+                return undefined;
             }
             return entry.value;
         } catch (error) {

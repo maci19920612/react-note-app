@@ -8,6 +8,7 @@ import AlertDialogComponent from "./component/dialog/alert/AlertDialogComponent"
 import { DependencyInjectionContext, ComponentContainer } from "./di/ComponentContainer";
 
 import './App.css';
+import AuthGuardComponent from './component/util/AuthGuardComponent';
 
 const { useState } = React;
 
@@ -19,9 +20,15 @@ function App() {
           <AlertDialogComponent>
             <Router>
               <Switch>
-                <Route path="/login" component={LoginComponent} />
+                <Route path="/login" component={LoginComponent}>
+                  <AuthGuardComponent authRequired={false}>
+                    <LoginComponent />
+                  </AuthGuardComponent>
+                </Route>
                 <Route path="/">
-                  This is the main page, you can navigate with these link to login page: <Link to="/login">Login</Link>
+                  <AuthGuardComponent authRequired={true}>
+                    This is the main page, you can navigate with these link to login page: <Link to="/login">Login</Link>
+                  </AuthGuardComponent>
                 </Route>
               </Switch>
             </Router>

@@ -1,4 +1,4 @@
-import { asClass, AwilixContainer } from "awilix";
+import { asClass, asValue, AwilixContainer } from "awilix";
 import { AuthManager } from "../../manager/AuthManager"
 import { IModule } from "./base/IModule"
 
@@ -9,7 +9,7 @@ export type AuthModuleType = {
 export class AuthModule implements IModule{
     register(container: AwilixContainer<any>) {
         container.register({
-            authManager: asClass(AuthManager)
+            authManager: asClass(AuthManager).singleton()
         });
     }
 }
