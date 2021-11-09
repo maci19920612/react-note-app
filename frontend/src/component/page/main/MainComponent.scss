@@ -1,5 +1,5 @@
-@for $i from 20 to 40 {
-    .w-#{$i}{
+@for $i from 20 to 41 {
+    .w-#{$i} {
         width: #{$i}px;
         height: #{$i}px;
         line-height: #{$i}px;
@@ -7,21 +7,36 @@
     }
 }
 
-.page.component-main{
+.page.component-main {
     height: 100%;
     width: 100%;
-    .list-item{
-        .circle {
-            background-color: gray;
-            border-radius: 100%;
+    .list-item {
+        .icon-container {
+            width: 50px;
+            display: inline-table;
+            .table-cell{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            
+            .circle {
+                background-color: gray;
+                border-radius: 100%;
+            }
         }
-        .name {
-            font-weight: bold;
-            color: black;
+        .text-container{
+            display: inline-block;
+            width: calc(100% - 50px - 8px);
+            margin-left: 8px;
+            .name {
+                font-weight: bold;
+                color: black;
+            }
+            .date {
+                font-weight: normal;
+                color: gray;
+            }
         }
-        .date {
-            font-weight: normal;
-            color: gray;
-        }
+        
     }
 }

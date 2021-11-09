@@ -13,6 +13,17 @@ const MainComponent: React.FunctionComponent = () => {
         }
         main().catch(error => console.error("Error happened in the main function ", error));
     `;
+
+    let items = [
+        {
+            name: "Example directory",
+            type: "directory",
+        },
+        {
+            name: "Example note",
+            type: "note"
+        }
+    ]
     return (
         <div className="page component-main">
             <Container fluid>
@@ -21,29 +32,23 @@ const MainComponent: React.FunctionComponent = () => {
                 </Row>
                 <Row>
                     <Col md={{ span: width }}>
-                        <Container className="list-item directory" fluid>
-                            <Row>
-                                <Col md="2" className="icon-container">
-                                    <div className="icon circle w-39">
+                        <div className="list-item">
+                            <div className="icon-container">
+                                <div className="table-cell">
+                                    <div className="circle w-40">
                                         <FontAwesomeIcon icon={faFolderOpen} />
                                     </div>
-                                </Col>
-                                <Col>
-                                    <Container fluid>
-                                        <Row>
-                                            <Col className="name">
-                                                Example folder
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col className="date">
-                                                Created at: 2021-09-21
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
-                            </Row>
-                        </Container>
+                                </div>
+                            </div>
+                            <div className="text-container">
+                                <div className="name">
+                                    Example diretory
+                                </div>
+                                <div className="date">
+                                    Created at: 2021-11-10
+                                </div>
+                            </div>
+                        </div>
 
                     </Col>
                     <Col className="note-content-container">
