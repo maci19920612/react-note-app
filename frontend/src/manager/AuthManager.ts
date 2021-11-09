@@ -1,3 +1,5 @@
+
+import { BehaviorSubject, Subject } from "rxjs";
 import { StorageManager } from "./storage/StorageManager";
 
 const KEY_TOKEN = "token"
@@ -5,8 +7,8 @@ const KEY_TOKEN = "token"
 export class AuthManager {
     public constructor(
         private storageManager: StorageManager
-    ) {
-    }
+    ) {}
+
     async login(username: string, password: string): Promise<void> {
         if (username != "admin" || password != "admin") {
             throw new Error("Invalid credentials provided.");

@@ -18,7 +18,7 @@ const LoginComponent: React.FunctionComponent<LoginComponentProperty> = (propert
     let {register, handleSubmit} = useForm();
     let loadingContext = useContext(LoadingContext);
     let alertContext = useContext(AlertContext);
-    let { authManager } = useContext(DependencyInjectionContext).get()
+    let { authManager } = useContext(DependencyInjectionContext).get();
     const onFormSubmitHandler = async (loginFormData) => {
         loadingContext.showLoading(true);
         try{

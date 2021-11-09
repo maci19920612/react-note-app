@@ -19,7 +19,7 @@ export class LocalStorage implements IStorage {
             let entry = JSON.parse(targetItem);
             let expiration = new Date(entry.expiration);
             let currentDate = new Date();
-            if (expiration >= currentDate) {
+            if (expiration <= currentDate) {
                 console.log(`This entry is already expired: ${expiration}, key: ${key}`);
                 return undefined;
             }
