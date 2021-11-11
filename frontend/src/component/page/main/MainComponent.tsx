@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 import "./MainComponent.scss";
 import VerticalAlignComponent from "../../util/VerticalAlignComponent";
+import { ListItemVM } from "./subcomponents/list-item/model/ListItemVM";
+import ListItem from "./subcomponents/list-item/ListItem";
 
 const MainComponent: React.FunctionComponent = () => {
     let [width, setWidth] = useState(2);
@@ -14,16 +15,26 @@ const MainComponent: React.FunctionComponent = () => {
         main().catch(error => console.error("Error happened in the main function ", error));
     `;
 
-    let items = [
+    let items: Array<ListItemVM> = [
         {
-            name: "Example directory",
+            id: 1,
             type: "directory",
+            name: "Example directory",
+            createdAt: "2021-11-21"
         },
         {
+            id: 1,
+            type: "note",
             name: "Example note",
-            type: "note"
+            content: "Example content, lorem ipsum dolor sit amet",
+            createdAt: "2021-11-22"
         }
     ]
+
+    let listItems = items.map(item => {
+        return (<ListItem  key={`${item.id}-${item.type}`} note={item} />);
+    });
+
     return (
         <div className="page component-main">
             <Container fluid>
@@ -32,24 +43,7 @@ const MainComponent: React.FunctionComponent = () => {
                 </Row>
                 <Row>
                     <Col md={{ span: width }}>
-                        <div className="list-item">
-                            <div className="icon-container">
-                                <div className="table-cell">
-                                    <div className="circle w-40">
-                                        <FontAwesomeIcon icon={faFolderOpen} />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-container">
-                                <div className="name">
-                                    Example diretory
-                                </div>
-                                <div className="date">
-                                    Created at: 2021-11-10
-                                </div>
-                            </div>
-                        </div>
-
+                        {listItems}
                     </Col>
                     <Col className="note-content-container">
                         <h1>Example note</h1>

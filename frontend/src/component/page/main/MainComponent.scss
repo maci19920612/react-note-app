@@ -10,33 +10,4 @@
 .page.component-main {
     height: 100%;
     width: 100%;
-    .list-item {
-        .icon-container {
-            width: 50px;
-            display: inline-table;
-            .table-cell{
-                display: table-cell;
-                vertical-align: middle;
-            }
-            
-            .circle {
-                background-color: gray;
-                border-radius: 100%;
-            }
-        }
-        .text-container{
-            display: inline-block;
-            width: calc(100% - 50px - 8px);
-            margin-left: 8px;
-            .name {
-                font-weight: bold;
-                color: black;
-            }
-            .date {
-                font-weight: normal;
-                color: gray;
-            }
-        }
-        
-    }
 }
