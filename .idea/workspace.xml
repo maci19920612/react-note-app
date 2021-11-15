@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="787ce365-2f79-40a5-9c66-d9e52b8da8ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/fixtures/Note.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/fixtures/NoteDirectoy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/component/page/main/subcomponents/menu/MenuComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/di/modules/NoteModule.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/fixtures/User.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/fixtures/User.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/service/NoteService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/service/NoteService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ApiManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ApiManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/component/page/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/page/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/component/page/main/subcomponents/list-item/ListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/page/main/subcomponents/list-item/ListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/component/page/main/subcomponents/list-item/model/ListItemVM.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/page/main/subcomponents/list-item/model/ListItemVM.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/di/ComponentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/di/ComponentContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/manager/NoteManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/manager/NoteManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +54,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -111,6 +117,7 @@
       <workItem from="1631904609259" duration="4323000" />
       <workItem from="1631972669029" duration="9999000" />
       <workItem from="1632047768533" duration="7648000" />
+      <workItem from="1637008338384" duration="3433000" />
     </task>
     <task id="LOCAL-00001" summary="Implement the authentication based functions on the server side">
       <created>1631977654130</created>

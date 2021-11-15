@@ -7,6 +7,7 @@ import { ListItemVM } from "./model/ListItemVM";
 
 export type ListItemProps = {
     note: ListItemVM;
+    onClick: (note: ListItemVM) => void;
 }
 
 const ListItem: React.FunctionComponent<ListItemProps> = (params: ListItemProps) => {
@@ -19,7 +20,7 @@ const ListItem: React.FunctionComponent<ListItemProps> = (params: ListItemProps)
         default: throw new Error(`Note type note implemented in ListItem: ${note.type}`);
     }
     return (
-        <div className="list-item">
+        <div className="list-item" onClick={() => { params.onClick(note) }}>
             <div className="icon-container">
                 <div className="table-cell">
                     <div className="circle w-40">

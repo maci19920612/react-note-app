@@ -3,8 +3,10 @@ import * as awilix from "awilix";
 import { AuthModule, AuthModuleType } from "./modules/AuthModule";
 import { AppModule, AppModuleType } from "./modules/AppModule";
 import { StorageModule, StorageModuleType } from "./modules/StorageModule";
+import {ApiModule} from "./modules/ApiModule";
+import {NoteModule, NoteModuleType} from "./modules/NoteModule";
 
-export type AppComponent = AuthModuleType & AppModuleType & StorageModuleType;
+export type AppComponent = AuthModuleType & AppModuleType & StorageModuleType & NoteModuleType;
 
 export class ComponentContainerImpl {
     private container: awilix.AwilixContainer<AppComponent>
@@ -16,6 +18,8 @@ export class ComponentContainerImpl {
             //new AppModule(),
             new StorageModule(),
             new AuthModule(),
+            new ApiModule(),
+            new NoteModule(),
         ];
         modules.forEach(module => module.register(this.container));
     }
