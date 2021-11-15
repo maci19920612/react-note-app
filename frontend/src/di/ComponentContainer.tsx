@@ -1,20 +1,26 @@
 import React from "react";
 import * as awilix from "awilix";
-import AuthModule, { AuthModuleDefinition } from "./modules/AuthModule";
+import { AuthModule, AuthModuleType } from "./modules/AuthModule";
+import { AppModule, AppModuleType } from "./modules/AppModule";
+import { StorageModule, StorageModuleType } from "./modules/StorageModule";
 
-export type AppComponent = AuthModuleDefinition;
+export type AppComponent = AuthModuleType & AppModuleType & StorageModuleType;
 
-export class ComponentContainerImpl{
+export class ComponentContainerImpl {
     private container: awilix.AwilixContainer<AppComponent>
-    constructor(){
-        this.container = awilix.createContainer();
+    constructor() {
+        this.container = awilix.createContainer({
+            injectionMode: awilix.InjectionMode.CLASSIC
+        });
         let modules = [
-            AuthModule
+            //new AppModule(),
+            new StorageModule(),
+            new AuthModule(),
         ];
-        modules.forEach(module => this.container.register(module));
+        modules.forEach(module => module.register(this.container));
     }
-
-    get() : AppComponent {
+    
+    get(): AppComponent {
         return this.container.cradle;
     }
 }

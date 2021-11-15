@@ -1,0 +1,13 @@
+@for $i from 20 to 41 {
+    .w-#{$i} {
+        width: #{$i}px;
+        height: #{$i}px;
+        line-height: #{$i}px;
+        text-align: center;
+    }
+}
+
+.page.component-main {
+    height: 100%;
+    width: 100%;
+}
